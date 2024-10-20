@@ -65,10 +65,10 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("sunlight_world")
-                await self.one.join_chat("world_friend_chatting_zone")
-                await self.one.join_chat("untold_coder")
-                await self.one.join_chat("ABOUT_CODER")
+                await self.one.join_chat("ANIME_CHAT_ANG")
+                await self.one.join_chat("ANIME_CHAT_ANG")
+                await self.one.join_chat("ANIME_CHAT_ANG")
+                await self.one.join_chat("ANIME_CHAT_ANG")
             except:
                 pass
             assistants.append(1)
@@ -93,10 +93,10 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("sunlight_world")
-                await self.two.join_chat("world_friend_chatting_zone")
-                await self.two.join_chat("untold_coder")
-                await self.two.join_chat("ABOUT_CODER")
+                await self.two.join_chat("ANIME_CHAT_ANG")
+                await self.two.join_chat("ANIME_CHAT_ANG")
+                await self.two.join_chat("ANIME_CHAT_ANG")
+                await self.two.join_chat("ANIME_CHAT_ANG")
             except:
                 pass
             assistants.append(2)
