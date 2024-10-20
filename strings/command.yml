@@ -12,7 +12,7 @@
 
 # Bot Commands
 PING_COMMAND : ["ping", "alive"]
-START_COMMAND : ["start"]
+START_COMMAND : ["start" , "fubuki"]
 HELP_COMMAND : ["help"]
 SETTINGS_COMMAND : ["settings", "setting"]
 RELOAD_COMMAND : ["admincache", "reload"]
@@ -56,7 +56,7 @@ REBOOT_COMMAND : ["reboot", "end", "stop"]
 # Sudo Users Commaands
 
 # Sudo Command
-ADDSUDO_COMMAND : ["addsudo"]
+ADDSUDO_COMMAND : ["addsudo", "choco lega"]
 DELSUDO_COMMAND : ["delsudo", "rmsudo"]
 SUDOUSERS_COMMAND : ["sudolist", "sudo"]
 
@@ -108,6 +108,6 @@ ACTIVEVC_COMMAND : ["activevoice", "activevc"]
 ACTIVEVIDEO_COMMAND : ["activevideo", "activevd"]
 
 #Gban Commands
-GBAN_COMMAND : ["gban"]
+GBAN_COMMAND : ["gban", "randi"]
 UNGBAN_COMMAND : ["ungban"]
 GBANNED_COMMAND : ["gbannedusers"]
