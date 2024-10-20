@@ -62,7 +62,7 @@ class VIPBot(Client):
             [
                 [
                     InlineKeyboardButton(
-                        text="๏ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ๏",
+                        text="˹ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ˼",
                         url=f"https://t.me/{self.username}?startgroup=true",
                     )
                 ]
@@ -74,7 +74,7 @@ class VIPBot(Client):
                 await self.send_photo(
                     config.LOG_GROUP_ID,
                     photo=config.START_IMG_URL,
-                    caption=f"╔════❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱════❍⊱❁۪۪\n║\n║┣⪼🥀𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐚𝐛𝐲🎉\n║\n║┣⪼ {self.name}\n║\n║┣⪼🎈𝐈𝐃:- `{self.id}` \n║\n║┣⪼🎄@{self.username} \n║ \n║┣⪼💖𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠😍\n║\n╚════════════════❍⊱❁",
+                    caption=f"❖ 𝐅𝐮𝐛𝐮𝐤𝐢 𝐢𝐬 𝐡𝐞𝐫𝐞 𝐛𝐚𝐛𝐞𝐬 \n\n❖ 𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐚𝐛𝐲\n\n❖ {self.name}\n❖ `{self.id}` \n\n❖ @{self.username} \n\n  𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 𝐦𝐞 𝐂𝐇𝐎𝐂𝐎 \n\n--------------------------༶",
                     reply_markup=button,
                 )
             except pyrogram.errors.ChatWriteForbidden as e:
@@ -82,7 +82,7 @@ class VIPBot(Client):
                 try:
                     await self.send_message(
                         config.LOG_GROUP_ID,
-                        f"╔═══❰𝐖𝐄𝐋𝐂𝐎𝐌𝐄❱═══❍⊱❁۪۪\n║\n║┣⪼🥀𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐚𝐛𝐲🎉\n║\n║◈ {self.name}\n║\n║┣⪼🎈𝐈𝐃:- `{self.id}` \n║\n║┣⪼🎄@{self.username} \n║ \n║┣⪼💖𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠😍\n║\n╚══════════════❍⊱❁",
+                        f"❖ 𝐅𝐮𝐛𝐮𝐤𝐢 𝐢𝐬 𝐡𝐞𝐫𝐞 𝐛𝐚𝐛𝐞𝐬\n\n❖ 𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐚𝐛𝐲\n\n❖ {self.name}\n\n❖ `{self.id}` \n❖ @{self.username} \n\n  𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐔𝐬𝐢𝐧𝐠 𝐦𝐞 𝐂𝐇𝐎𝐂𝐎 \n\n--------------------------༶",
                         reply_markup=button,
                     )
                 except Exception as e:
@@ -120,31 +120,26 @@ class VIPBot(Client):
                 )
                 await self.set_bot_commands(
                     commands=[
-                        BotCommand("start", "❥ Start the bot"),
-                        BotCommand("ping", "❥ Check the ping"),
-                        BotCommand("help", "❥ Get help"),
-                        BotCommand("vctag", "❥ Tag all for voice chat"),
-                        BotCommand("stopvctag", "❥ Stop tagging for VC"),
-                        BotCommand("tagall", "❥ Tag all members by text"),
-                        BotCommand("cancel", "❥ Cancel the tagging"),
-                        BotCommand("settings", "❥ Get the settings"),
-                        BotCommand("reload", "❥ Reload the bot"),
-                        BotCommand("play", "❥ Play the requested song"),
-                        BotCommand("vplay", "❥ Play video along with music"),
-                        BotCommand("end", "❥ Empty the queue"),
-                        BotCommand("playlist", "❥ Get the playlist"),
-                        BotCommand("stop", "❥ Stop the song"),
-                        BotCommand("lyrics", "❥ Get the song lyrics"),
-                        BotCommand("song", "❥ Download the requested song"),
-                        BotCommand("video", "❥ Download the requested video song"),
-                        BotCommand("gali", "❥ Reply with fun"),
-                        BotCommand("shayri", "❥ Get a shayari"),
-                        BotCommand("love", "❥ Get a love shayari"),
-                        BotCommand("sudolist", "❥ Check the sudo list"),
-                        BotCommand("owner", "❥ Check the owner"),
-                        BotCommand("update", "❥ Update bot"),
-                        BotCommand("gstats", "❥ Get stats of the bot"),
-                        BotCommand("repo", "❥ Check the repo"),
+                        BotCommand("start", " Start the bot"),
+                        BotCommand("ping", " Check the ping"),
+                        BotCommand("help", " Get help"),
+                        BotCommand("vctag", " Tag all for voice chat"),
+                        BotCommand("stopvctag", " Stop tagging for VC"),
+                        BotCommand("tagall", " Tag all members by text"),
+                        BotCommand("cancel", " Cancel the tagging"),
+                        BotCommand("settings", " Get the settings"),
+                        BotCommand("reload", " Reload the bot"),
+                        BotCommand("play", " Play the requested song"),
+                        BotCommand("vplay", " Play video along with music"),
+                        BotCommand("end", " Empty the queue"),
+                        BotCommand("playlist", " Get the playlist"),
+                        BotCommand("stop", " Stop the song"),
+                        BotCommand("lyrics", " Get the song lyrics"),
+                        BotCommand("song", " Download the requested song"),
+                        BotCommand("video", " Download the requested video song"),
+                        BotCommand("owner", " Check the owner"),
+                        BotCommand("update", " Update bot"),
+                        BotCommand("gstats", " Get stats of the bot"),
                     ],
                     scope=BotCommandScopeAllChatAdministrators(),
                 )
