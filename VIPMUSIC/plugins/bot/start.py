@@ -311,11 +311,11 @@ async def testbot(client, message: Message, _):
         uptime = int(time.time() - _boot_)
 
         # Send the response with the group photo or fallback to START_IMG_URL
-        if chat_photo:
-            await message.reply_photo(
-                photo=chat_photo,
-                caption=_["start_7"].format(client.mention, get_readable_time(uptime)),
-                reply_markup=InlineKeyboardMarkup(out),
+        if config.START_IMG_URL:
+        await message.reply_video(
+            video=config.START_IMG_URL
+            caption=_["start_7"].format(client.mention, get_readable_time(uptime)),
+            reply_markup=InlineKeyboardMarkup(out),
             )
         else:
             await message.reply_photo(
@@ -363,10 +363,11 @@ async def welcome(client, message: Message):
 
                 userbot = await get_assistant(chat_id)
                 out = start_pannel(_)
-                await message.reply_photo(
-                    photo=chat_photo,
-                    caption=_["start_2"],
-                    reply_markup=InlineKeyboardMarkup(out),
+                if config.START_IMG_URL:
+                await message.reply_video(
+                     video=config.START_IMG_URL
+                     caption=_["start_2"],
+                     reply_markup=InlineKeyboardMarkup(out),
                 )
 
             # Handle owner joining
