@@ -57,8 +57,8 @@ STATS_COMMAND = get_command("STATS_COMMAND")
 @language
 async def stats_global(client, message: Message, _):
     upl = stats_buttons(_, True if message.from_user.id in SUDOERS else False)
-    await message.reply_photo(
-        photo=config.STATS_IMG_URL,
+    await message.reply_video(
+        video=config.STATS_IMG_URL,
         caption=_["gstats_11"].format(app.mention),
         reply_markup=upl,
     )
@@ -67,7 +67,7 @@ async def stats_global(client, message: Message, _):
 @app.on_message(filters.command(GSTATS_COMMAND) & ~BANNED_USERS)
 @language
 async def gstats_global(client, message: Message, _):
-    await message.react("🕊️")
+    await message.react("🧐")
     mystic = await message.reply_text(_["gstats_1"])
     stats = await get_global_tops()
     if not stats:
@@ -375,8 +375,8 @@ async def overall_stats(client, CallbackQuery, _):
     try:
         await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
     except MessageIdInvalid:
-        await CallbackQuery.message.reply_photo(
-            photo=config.STATS_IMG_URL, caption=text, reply_markup=upl
+        await CallbackQuery.message.reply_video(
+            video=config.STATS_IMG_URL, caption=text, reply_markup=upl
         )
 
 
@@ -392,15 +392,15 @@ async def back_buttons(client, CallbackQuery, _):
     command = CallbackQuery.matches[0].group(1)
     if command == "TOPMARKUPGET":
         upl = top_ten_stats_markup(_)
-        med = InputMediaPhoto(
+        med = InputMediavideo(
             media=config.GLOBAL_IMG_URL,
             caption=_["gstats_9"],
         )
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.GLOBAL_IMG_URL,
+            await CallbackQuery.message.reply_video(
+                video=config.GLOBAL_IMG_URL,
                 caption=_["gstats_9"],
                 reply_markup=upl,
             )
@@ -409,15 +409,15 @@ async def back_buttons(client, CallbackQuery, _):
             _,
             True if CallbackQuery.from_user.id in SUDOERS else False,
         )
-        med = InputMediaPhoto(
+        med = InputMediavideo(
             media=config.GLOBAL_IMG_URL,
             caption=_["gstats_10"].format(app.mention),
         )
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.GLOBAL_IMG_URL,
+            await CallbackQuery.message.reply_video(
+                video=config.GLOBAL_IMG_URL,
                 caption=_["gstats_10"].format(app.mention),
                 reply_markup=upl,
             )
@@ -426,15 +426,15 @@ async def back_buttons(client, CallbackQuery, _):
             _,
             True if CallbackQuery.from_user.id in SUDOERS else False,
         )
-        med = InputMediaPhoto(
+        med = InputMediavideo(
             media=config.STATS_IMG_URL,
             caption=_["gstats_11"].format(app.mention),
         )
         try:
             await CallbackQuery.edit_message_media(media=med, reply_markup=upl)
         except MessageIdInvalid:
-            await CallbackQuery.message.reply_photo(
-                photo=config.STATS_IMG_URL,
+            await CallbackQuery.message.reply_video(
+                video=config.STATS_IMG_URL,
                 caption=_["gstats_11"].format(app.mention),
                 reply_markup=upl,
             )
