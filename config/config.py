@@ -70,12 +70,12 @@ SONG_DOWNLOAD_DURATION = int(
 
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002342282754"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002384476626"))
 
 
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "1266240012").split())
+    map(int, getenv("OWNER_ID", "5787354656").split())
 )  # Input type must be interger
 
 
@@ -114,7 +114,7 @@ AUTO_GCAST_MSG = getenv("AUTO_GCAST_MSG", "")
 
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/alinu00"
+    "SUPPORT_CHANNEL", "https://t.me/astheticdpsforu"
 )  # Example:- https://t.me/VIP_CREATORS
 SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", "https://t.me/ANIME_CHAT_ANG"
@@ -217,12 +217,12 @@ autoclean = []
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
-    "https://envs.sh/pYG.mp4",
+    "https://envs.sh/paz.mp4",
 )
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://envs.sh/pYY.mp4",
+    "https://envs.sh/paC.mp4",
 )
 
 PLAYLIST_IMG_URL = getenv(
@@ -232,12 +232,12 @@ PLAYLIST_IMG_URL = getenv(
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "https://envs.sh/pFS.mp4",
+    "https://envs.sh/paC.mp4",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "https://envs.sh/pC0.mp4",
+    "https://envs.sh/paz.mp4",
 )
     
 TELEGRAM_AUDIO_URL = getenv(
