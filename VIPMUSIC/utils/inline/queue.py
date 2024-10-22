@@ -67,7 +67,7 @@ def aq_markup(_, chat_id):
     buttons = [
         [
             InlineKeyboardButton(text="ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
+         [   InlineKeyboardButton(text="sᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
         ],
         [
@@ -78,12 +78,7 @@ def aq_markup(_, chat_id):
                 text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/untold_coder4",
-            ),
-        ],
+        
     ]
     return buttons
 
@@ -113,12 +108,7 @@ def queuemarkup(_, vidid, chat_id):
                 text="ʀᴇᴘʟᴀʏ", callback_data=f"ADMIN Replay|{chat_id}"
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/untold_coder4",
-            ),
-        ],
+        
     ]
 
     return buttons
