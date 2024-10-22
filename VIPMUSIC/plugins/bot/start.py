@@ -276,10 +276,11 @@ async def start_comm(client, message: Message, _):
         except AttributeError:
             chat_photo = "assets/nodp.png"
         await vips.delete()
-        await message.reply_photo(
-            photo=chat_photo,
-            caption=_["start_2"].format(message.from_user.mention, app.mention),
-            reply_markup=InlineKeyboardMarkup(out),
+        if config.START_IMG_URL:
+                return await message.reply_video(
+                    video=START_IMG_URL,
+                    caption=_["start_2"].format(message.from_user.mention, app.mention),
+                    reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(config.LOG):
             sender_id = message.from_user.id
