@@ -332,61 +332,22 @@ async def testbot(client, message: Message, _):
 
 
 @app.on_message(filters.new_chat_members, group=3)
-async def welcome(client, message: Message):
+async def testbot(client, message: Message, _):
+    out = alive_panel(_)
+    uptime = int(time.time() - _boot_)
     chat_id = message.chat.id
-
-    # Private bot mode check
-    if config.PRIVATE_BOT_MODE == str(True):
-        if not await is_served_private_chat(chat_id):
-            await message.reply_text(
-                "**ᴛʜɪs ʙᴏᴛ's ᴘʀɪᴠᴀᴛᴇ ᴍᴏᴅᴇ ʜᴀs ʙᴇᴇɴ ᴇɴᴀʙʟᴇᴅ. ᴏɴʟʏ ᴍʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs. ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ɪᴛ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ, ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ ᴛᴏ ᴀᴜᴛʜᴏʀɪᴢᴇ ʏᴏᴜʀ ᴄʜᴀᴛ.**"
-            )
-            return await client.leave_chat(chat_id)
+    if config.START_IMG_URL:
+        await message.reply_video(
+            video=config.START_IMG_URL,
+            caption=_["start_7"].format(app.mention, get_readable_time(uptime)),
+            reply_markup=InlineKeyboardMarkup(out),
+        )
     else:
-        await add_served_chat(chat_id)
-
-    # Handle new chat members
-    for member in message.new_chat_members:
-        try:
-            language = await get_lang(chat_id)
-            _ = get_string(language)
-
-            # If bot itself joins the chat
-            if member.id == client.id:
-                try:
-                    groups_photo = await client.download_media(
-                        message.chat.photo.big_file_id, file_name=f"chatpp{chat_id}.png"
-                    )
-                    chat_photo = groups_photo if groups_photo else START_IMG_URL
-                except AttributeError:
-                    chat_photo = START_IMG_URL
-
-                userbot = await get_assistant(chat_id)
-                out = start_pannel(_)
-                if config.START_IMG_URL:
-                await message.reply_video(
-                     video=config.START_IMG_URL
-                     caption=_["start_2"],
-                     reply_markup=InlineKeyboardMarkup(out),
-                )
-
-            # Handle owner joining
-            if member.id in config.OWNER_ID:
-                return await message.reply_text(
-                    _["start_3"].format(client.mention, member.mention)
-                )
-
-            # Handle SUDOERS joining
-            if member.id in SUDOERS:
-                return await message.reply_text(
-                    _["start_4"].format(client.mention, member.mention)
-                )
-            return
-
-        except Exception as e:
-            print(f"Error: {e}")
-            return
-
+        await message.reply_text(
+            text=_["start_7"].format(app.mention, get_readable_time(uptime)),
+            reply_markup=InlineKeyboardMarkup(out),
+        )
+    return await add_served_chat(message.chat.id)
 
 @app.on_callback_query(filters.regex("go_to_start"))
 @LanguageStart
